@@ -11,6 +11,8 @@ class City(Base):
     name = Column(String(255), nullable=False)
     additional_info = Column(String(255), nullable=False)
 
+    temperatures = relationship("Temperature", back_populates="city", cascade="all, delete")
+
 
 class Temperature(Base):
     __tablename__ = "temperature"

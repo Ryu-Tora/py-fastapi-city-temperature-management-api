@@ -19,18 +19,11 @@ class City(CityBase):
         from_attributes = True
 
 
-class TemperatureBase(BaseModel):
+class TemperatureRead(BaseModel):
+    id: int
     city_id: int
     date_time: datetime
     temperature: float
-
-
-class CityTemperatureCreate(TemperatureBase):
-    pass
-
-
-class CityTemperature(TemperatureBase):
-    id: int
 
     class Config:
         from_attributes = True
