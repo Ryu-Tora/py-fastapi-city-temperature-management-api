@@ -7,7 +7,7 @@ import crud
 import schemas
 from database import SessionLocal
 
-router = APIRouter()
+router = APIRouter(prefix="/cities", tags=["Cities"])
 
 
 def get_db():
@@ -20,7 +20,7 @@ def get_db():
 
 @router.post("", response_model=schemas.City)
 def create(city: schemas.CityCreate, db: Session = Depends(get_db)):
-    return crud.create(city, db=db)
+    return crud.create_city(city, db=db)
 
 
 @router.get("", response_model=List[schemas.City])

@@ -1,5 +1,3 @@
-from http.client import HTTPException
-
 from sqlalchemy.orm import Session
 
 import models
